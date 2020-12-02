@@ -5,4 +5,4 @@ gROOT.ProcessLine(".L /home/users/fsetti/CMSSW_9_4_4/lib/slc6_amd64_gcc700/libTa
 gROOT.ProcessLine(".L /home/users/fsetti/CMSSW_9_4_4/lib/slc6_amd64_gcc700/libTauAnalysisSVfitTF.so")
 gROOT.ProcessLine(".L SVfit_py.cc+")
 
-ROOT.SVfit_mass( parameters )
+diTau_mass = ROOT.SVfit_mass( parameters )
