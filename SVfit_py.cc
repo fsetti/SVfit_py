@@ -19,17 +19,27 @@ double SVfit_mass(float measuredMETx, float measuredMETy, float covMET_XX, float
 
 	// define lepton four vectors
 	std::vector<MeasuredTauLepton> measuredTauLeptons;
+
 	if ( category1 == 1 ){
 		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToMuDecay, tau1_pt, tau1_eta, tau1_phi, 0.10566));
 	}
 	else if ( category1 == 2 ){
 		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToElecDecay, tau1_pt, tau1_eta, tau1_phi, 0.51100e-3));
 	}
-	else {
+	else if ( category1 == 3 ){
 		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay, tau1_pt, tau1_eta, tau1_phi, tau1_mass, tauDecay_mode1));
 	}
 
-	measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay,  tau2_pt, tau2_eta, tau2_phi,  tau2_mass, tauDecay_mode2));
+	if ( category2 == 1 ){
+		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToMuDecay, tau2_pt, tau2_eta, tau2_phi, 0.10566));
+	}
+	else if ( category2 == 2 ){
+		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToElecDecay, tau2_pt, tau2_eta, tau2_phi, 0.51100e-3));
+	}
+	else if ( category2 == 3 ){
+		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay, tau2_pt, tau2_eta, tau2_phi, tau2_mass, tauDecay_mode2));
+	}
+	//measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay,  tau2_pt, tau2_eta, tau2_phi,  tau2_mass, tauDecay_mode2));
 
 	//Run FastMTT
 	FastMTT aFastMTTAlgo;
@@ -53,17 +63,27 @@ vector<double>  SVfit_ditau_p4(float measuredMETx, float measuredMETy, float cov
 
 	// define lepton four vectors
 	std::vector<MeasuredTauLepton> measuredTauLeptons;
+
 	if ( category1 == 1 ){
 		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToMuDecay, tau1_pt, tau1_eta, tau1_phi, 0.10566));
 	}
 	else if ( category1 == 2 ){
 		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToElecDecay, tau1_pt, tau1_eta, tau1_phi, 0.51100e-3));
 	}
-	else {
+	else if ( category1 == 3 ){
 		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay, tau1_pt, tau1_eta, tau1_phi, tau1_mass, tauDecay_mode1));
 	}
 
-	measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay,  tau2_pt, tau2_eta, tau2_phi,  tau2_mass, tauDecay_mode2));
+	if ( category2 == 1 ){
+		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToMuDecay, tau2_pt, tau2_eta, tau2_phi, 0.10566));
+	}
+	else if ( category2 == 2 ){
+		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToElecDecay, tau2_pt, tau2_eta, tau2_phi, 0.51100e-3));
+	}
+	else if ( category2 == 3 ){
+		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay, tau2_pt, tau2_eta, tau2_phi, tau2_mass, tauDecay_mode2));
+	}
+	//measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay,  tau2_pt, tau2_eta, tau2_phi,  tau2_mass, tauDecay_mode2));
 
 	//Run FastMTT
 	FastMTT aFastMTTAlgo;
@@ -92,17 +112,27 @@ vector<vector<double>> SVfit_all_p4(float measuredMETx, float measuredMETy, floa
 
 	// define lepton four vectors
 	std::vector<MeasuredTauLepton> measuredTauLeptons;
+
 	if ( category1 == 1 ){
 		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToMuDecay, tau1_pt, tau1_eta, tau1_phi, 0.10566));
 	}
 	else if ( category1 == 2 ){
 		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToElecDecay, tau1_pt, tau1_eta, tau1_phi, 0.51100e-3));
 	}
-	else {
+	else if ( category1 == 3 ){
 		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay, tau1_pt, tau1_eta, tau1_phi, tau1_mass, tauDecay_mode1));
 	}
 
-	measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay,  tau2_pt, tau2_eta, tau2_phi,  tau2_mass, tauDecay_mode2));
+	if ( category2 == 1 ){
+		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToMuDecay, tau2_pt, tau2_eta, tau2_phi, 0.10566));
+	}
+	else if ( category2 == 2 ){
+		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToElecDecay, tau2_pt, tau2_eta, tau2_phi, 0.51100e-3));
+	}
+	else if ( category2 == 3 ){
+		measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay, tau2_pt, tau2_eta, tau2_phi, tau2_mass, tauDecay_mode2));
+	}
+	//measuredTauLeptons.push_back(MeasuredTauLepton(MeasuredTauLepton::kTauToHadDecay,  tau2_pt, tau2_eta, tau2_phi,  tau2_mass, tauDecay_mode2));
 
 	//Run FastMTT
 	FastMTT aFastMTTAlgo;
